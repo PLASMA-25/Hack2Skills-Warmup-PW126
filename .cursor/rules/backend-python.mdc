@@ -1,0 +1,31 @@
+---
+description: FastAPI backend conventions for code quality, security, and efficiency
+globs: backend/**/*.py
+alwaysApply: false
+---
+
+# Backend Python Standards
+
+## Structure
+- Routers in `backend/app/routers/`; business logic in `backend/app/services/`
+- Config via `backend/app/config.py` (Pydantic Settings from env)
+- All API routes under `/api/*`
+
+## Code Quality
+- Type hints on all functions
+- Pydantic models for request/response bodies; no bare `dict` from API layer
+- HTTPException with appropriate status codes; no raw stack traces to clients
+
+## Security
+- Secrets only in env vars (see `.env.example`); never commit `.env`
+- Validate and sanitize all user input via Pydantic
+- Restrict CORS to known dev origins locally; tighten in production
+
+## Efficiency
+- Avoid blocking I/O in async handlers without `run_in_executor`
+- Do not load large payloads into memory when streaming suffices
+- Keep dependencies minimal
+
+## Production
+- Serve built frontend from `frontend/dist` via StaticFiles
+- API routes registered before static mount so `/api/*` takes precedence

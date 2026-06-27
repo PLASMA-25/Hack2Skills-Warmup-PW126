@@ -1,0 +1,26 @@
+---
+description: React and accessibility standards for the frontend
+globs: frontend/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Frontend React Standards
+
+## Structure
+- Functional components only; extract reusable logic into custom hooks
+- All API calls through `frontend/src/api/client.ts`
+- Vite dev proxy: `/api` → `http://localhost:8000`
+
+## Code Quality
+- TypeScript strict mode; no `any` unless unavoidable with a comment
+- Colocate component styles or use `index.css` utility classes consistently
+
+## Accessibility
+- Use semantic HTML: `main`, `nav`, `button`, `label`, `form`
+- Every interactive element needs an accessible name (visible label or `aria-label`)
+- Form fields must have associated `<label htmlFor="...">`
+- Visible keyboard focus styles; no click-only `div` buttons
+
+## Efficiency
+- Avoid unnecessary re-renders; memoize expensive derived values
+- Fetch only what the UI needs; handle loading and error states

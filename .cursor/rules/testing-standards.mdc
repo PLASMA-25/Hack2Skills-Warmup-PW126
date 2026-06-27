@@ -1,0 +1,22 @@
+---
+description: Backend and frontend testing conventions
+globs: backend/tests/**,frontend/src/**/*.test.{ts,tsx}
+alwaysApply: false
+---
+
+# Testing Standards
+
+## Backend (pytest)
+- Use FastAPI `TestClient` from `starlette.testclient`
+- Test HTTP status codes and response body shape
+- One test file per router or feature area under `backend/tests/`
+
+## Frontend (Vitest + React Testing Library)
+- Smoke-test that components render and key interactions work
+- Query by role/label, not implementation details (no test IDs unless necessary)
+- Place tests beside components: `Component.test.tsx`
+
+## Principles
+- Test behavior and contracts, not internal implementation
+- Each challenge requirement should map to at least one test when feasible
+- Run before submit: `pytest` (from `backend/`), `npm test` (from `frontend/`)

@@ -1,0 +1,32 @@
+---
+description: PromptWars evaluation priorities and build order
+alwaysApply: true
+---
+
+# PromptWars Evaluation Priorities
+
+Scores are the sum of six signals. Prioritize by impact weight.
+
+## High Impact (do first)
+- **Code Quality:** clean, readable, modular code; consistent naming; small focused functions
+- **Problem Statement Alignment:** implement exactly what the brief asks; no speculative extras
+
+## Medium Impact (do not skip)
+- **Security:** env-based secrets, input validation, safe error responses
+- **Efficiency:** avoid unnecessary work, round-trips, and memory waste
+
+## Low Impact (tiebreakers)
+- **Testing:** unit tests for core logic and API contracts
+- **Accessibility:** semantic HTML, labels, keyboard support
+
+## Build Order
+1. Parse requirements into a checklist
+2. Minimal correct solution that satisfies the brief
+3. Harden security and efficiency
+4. Add tests and accessibility polish
+5. Final review before submit
+
+## Submission Rules
+- Warm-up scores do not affect the leaderboard
+- Only the **final** submission score counts (not best-of attempts)
+- Treat the last push as final; avoid last-minute risky changes

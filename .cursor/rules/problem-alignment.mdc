@@ -1,0 +1,22 @@
+---
+description: Requirement tracking and scope control for the challenge brief
+alwaysApply: true
+---
+
+# Problem Statement Alignment
+
+## Challenge Requirements
+
+| # | Requirement | Files | Tests | Done |
+|---|-------------|-------|-------|------|
+| 1 | Structured meal planning flow from user's day | `IntentForm.tsx`, `graph/` | `test_plan.py` | yes |
+| 2 | Breakfast / Lunch / Dinner plan | `meal_agents.py`, `MealCards.tsx` | manual | yes |
+| 3 | Grocery list | `grocery_agent.py`, `GroceryList.tsx` | manual | yes |
+| 4 | Substitutions | `substitutions_agent.py`, `Substitutions.tsx` | manual | yes |
+| 5 | Budget feasibility logic | `budget_agent.py`, `BudgetBadge.tsx`, retry loop | `test_schema_utils.py` | yes |
+| 6 | Dynamic clarification for missing fields | `supervisor_clarify.py`, `ClarificationPrompt.tsx` | `test_schema_utils.py` | yes |
+
+## Scope Rules
+- Do not add features not mentioned in the brief
+- Do not remove required features for "simplicity"
+- Document assumptions in README only when the brief leaves a genuine gap
